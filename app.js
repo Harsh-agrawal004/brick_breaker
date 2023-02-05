@@ -1,11 +1,35 @@
 const grid = document.querySelector('.grid');
 const scoreDisplay = document.querySelector('#score');
-const button = document.querySelector('button');
-//replay
-
-button.addEventListener('click',function(){
-  window.location.reload();
+const reload = document.querySelector("#replay");
+const con = document.querySelector('.con');
+const container = document.querySelector('.container_1')
+const darkMode = document.querySelector("#dark");
+const playPause =document.querySelector("#playPause")
+darkMode.addEventListener('click',function(){
+    console.log("working");
+    con.classList.toggle('change');
+    grid.classList.toggle('changeGrid');
+    for(let n=0;n<blocks.length;n++){
+        const allBlocks = Array.from(document.querySelectorAll('.block'));
+        allBlocks[n].classList.toggle("changeBlock");
+    }
 })
+reload.addEventListener('click',function(){
+    window.location.reload();
+})
+
+
+
+const playButton = document.querySelector('.playButton');
+const box = document.querySelector('.box');
+playButton.addEventListener('click',function(){
+    container.style.display = 'inherit';
+    container.style.pointerEvents = "all";
+    box.classList.add('box_change')
+
+    
+
+
 let score = 0;
 const blockWidth = 100;
 const  blockHeight = 20;
@@ -39,11 +63,13 @@ const blocks =[
     new Block(230,240),
     new Block(340,240),
     new Block(450,240),
+    new Block(560,240),
     new Block(10,210),
     new Block(120,210),
     new Block(230,210),
     new Block(340,210),
-    new Block(450,210)
+    new Block(450,210),
+    new Block(560,210),
    
 ]
 console.log(blocks);
@@ -152,6 +178,7 @@ function checkForCollisions(){
     //check for win
     if(blocks.length===0){
         scoreDisplay.innerHTML = "you win";
+        clearInterval(timerId);
         
     }
    
@@ -180,3 +207,5 @@ function changeDirection(){
         return;
     }
 }
+
+})

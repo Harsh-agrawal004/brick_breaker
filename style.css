@@ -1,3 +1,45 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.start{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    border: 2px solid black;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.843);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px ;
+    
+}
+.playButton{
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    font-family: sans-serif;
+    background: none;
+    border: 2px solid #e7e7e7;
+    color: #e7e7e7;
+    border-radius: 10px 0;
+
+}
+.playButton:hover{
+    color: rgba(0, 0, 0, 0.843);
+    background-color: #e7e7e7;
+    cursor: pointer;
+    border-radius: 0 10px;
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-shadow: 5px 5px red;
+}
 .container{
     display: flex;
     height: 100vh;
@@ -31,4 +73,34 @@
     background-color: red;
     border-radius: 10px;
     
+}
+.container_1{
+    height: 100vh;
+    margin-top: -100vh;
+    display: none;
+    pointer-events: none;
+}
+.change{
+    background-color:black ;
+    color: #e7e7e7;
+}
+.changeBlock{
+    background-color: #e7e7e7 !important;
+}
+.changeGrid{
+    border: 2px solid #e7e7e7;
+}
+.box_change{
+    display: none;
+    pointer-events: none;
+}
+.buttons{
+    position: relative;
+    bottom:50px;
+    height: 30px;
+    width: 75px;
+    left: 40%;
+    
+    
+
 }
